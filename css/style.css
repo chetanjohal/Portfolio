@@ -371,9 +371,23 @@ body.offcanvas {
   margin: 0;
   padding: 0; }
 
+  .style-row{
+    padding-bottom: 2em;
+  }
+  .style-education{
+    clear: both;
+    width: 100%;
+    display: block;
+    background-color: #e8edf3; }
+    @media screen and (max-width: 768px) {
+
+      .style-education,
+    {
+        padding-top: 5em; } }
+
+
 .style-experience,
 .style-skills,
-.style-education,
 .style-blog,
 .style-work,
 .style-about,
@@ -387,7 +401,6 @@ body.offcanvas {
   @media screen and (max-width: 768px) {
     .style-experience,
     .style-skills,
-    .style-education,
     .style-blog,
     .style-work,
     .style-about,
@@ -683,7 +696,8 @@ body.offcanvas {
   font-size: 16px; }
 
 .services {
-  margin-bottom: 30px;
+  margin-bottom: 30px
+  margin-top: 20px;
   padding: 1.5em;
   background-color: white;
   -webkit-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
@@ -1357,6 +1371,10 @@ body.offcanvas {
       -webkit-transition: 0.2s;
       -o-transition: 0.2s;
       transition: 0.2s; }
+      .footnote{
+          background: #e8edf3
+          text-align: center;
+      }
 
 .style-nav-toggle i::before {
   top: -7px; }
@@ -1425,6 +1443,8 @@ body.offcanvas {
 
 .row-bottom-padded-sm {
   padding-bottom: 1em; }
+  .row-bottom-padded-gg {
+    padding-bottom: 2em; }
   @media screen and (max-width: 768px) {
     .row-bottom-padded-sm {
       padding-bottom: 1em; } }
