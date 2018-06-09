@@ -67,6 +67,18 @@ figure {
   color: #fff;
   background: #2c98f0; }
 
+
+#particles-js{
+      background-color: white;
+      height: 100vh;
+  }
+
+
+
+  #check {
+    vertical-align:bottom;
+  }
+
 #style-page {
   width: 100%;
   overflow: hidden;
@@ -200,8 +212,11 @@ figure {
     #style-aside .style-footer span {
       display: block; }
     #style-aside .style-footer ul {
-      padding: 0;
-      margin: 0; }
+      padding-left: : 0;
+      padding-right: 0;
+      padding-top: 0;
+      padding-bottom: 6em;
+      margin-right: 3em; }
       #style-aside .style-footer ul li {
         padding: 0;
         margin: 0;
@@ -218,6 +233,18 @@ figure {
 .container-wrap {
   max-width: 100%;
   margin: 0 auto; }
+
+#real-estate{
+  max-width: 100%;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s; }
+  @media screen and (max-width: 768px) {
+    #real-estate {
+      width: 100%;
+      padding: 0 1em; } }
+
+
 
 #style-main {
   width: calc(100% - 300px);
@@ -361,6 +388,34 @@ body.offcanvas {
     -o-transform: translateX(300px);
     transform: translateX(300px); }
 
+    .test {
+  index: 50;
+  top: 100px;
+  position: absolute;
+}
+
+    .btext{
+        color: #f9f3f4;
+        position: absolute;
+        text-align: center;
+        top: 40%;
+        width: 100%;
+        line-height: 0.4em;
+    }
+    .btnn{
+        color: #fff;
+        text-decoration: none;
+        border: #ccc 1px solid;
+        padding: 10px 15px;
+        border-radius: 8px;
+        line-height: 4em;
+    }
+
+    .btnn:hover{
+        color: #b19295;
+        border: #fff 1px solid;
+    }
+
 .style-narrow-content {
   padding: 0 2.5em;}
   @media screen and (max-width: 768px) {
@@ -384,6 +439,7 @@ body.offcanvas {
       .style-education,
     {
         padding-top: 5em; } }
+
 
 
 .style-experience,
@@ -490,8 +546,25 @@ body.offcanvas {
   letter-spacing: 5px;
   font-weight: 500; }
 
+  #wrapper {
+  width: 100%;
+  height: 400px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  height: 20px;
+  width: 100px;
+  margin: auto;
+}
+
 .center {
   display: block;
+  align-items: center;
+  justify-content: center;
   margin: auto;
   width: 50%;
    }
@@ -500,7 +573,7 @@ body.offcanvas {
 }
 
 .music {
-  background: #f9bf3f;
+  background: #e8edf3;
  }
  .music-top{
    margin-top: 25px;
@@ -1184,6 +1257,7 @@ body.offcanvas {
 .btn {
   margin-right: 4px;
   margin-bottom: 4px;
+  padding-bottom: 2em;
   font-family: "Quicksand", Arial, sans-serif;
   font-size: 12px;
   font-weight: 400;
@@ -1303,7 +1377,7 @@ body.offcanvas {
   background: transparent;
   border: transparent;
   background: #f2f3f7;
-  height: 54px;
+  height: 60px;
   font-size: 16px;
   font-weight: 400;
   -webkit-transition: 0.3s;
