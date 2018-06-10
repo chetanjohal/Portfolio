@@ -85,6 +85,20 @@
 		}
 	};
 
+
+	// Mixitup gallery
+	function mixitupGallery () {
+	  var mixItem = $(".project-gallery");
+	  if (mixItem.length) {
+	        mixItem .mixItUp()
+	  };
+	}
+
+	$(".project-menu > .filter").click(function(){
+	    $(".project-menu > .filter").removeClass("active");
+	    $(this).addClass("active");
+	});
+
 	// Animations
 	var contentWayPoint = function() {
 		var i = 0;
@@ -325,6 +339,7 @@
 		// navActive();
 		navigationSection();
 		// windowScroll();
+		mixitupGallery ();
 
 
 		mobileMenuOutsideClick();
