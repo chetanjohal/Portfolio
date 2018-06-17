@@ -1,4 +1,4 @@
-/* Responsive CSS Document */
+  /* Responsive CSS Document */
 
 /*
     Created on : 1/15/2017.
@@ -39,7 +39,7 @@
 
 @media (min-width: 992px) and (max-width: 1199px) {
   .theme-main-header .logo {width: 15%;}
-  .theme-main-menu .navbar-nav>li>a {padding: 9px 12px;}
+  .theme-main-menu .navbar-nav>li>a {padding: 9px 13px;}
   .theme-title p {width: 95%;}
   #our-client .client-slider p {width: 70%;}
   .recent-single-post .post {width: 75%;}

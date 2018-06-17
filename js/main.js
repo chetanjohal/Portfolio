@@ -73,6 +73,37 @@
 
 
 
+	//Add OnepageNav / Sidebar
+	function onePageFixedNav() {
+	    if($('body').length){
+	      // Add scrollspy to
+	      $('body').scrollspy({target: ".theme-main-header", offset: 1000});
+
+	      // Add smooth scrolling on all links inside the one-page-menu
+	      $(".one-page-menu li a").on('click', function(event) {
+	        // Make sure this.hash has a value before overriding default behavior
+	        if (this.hash !== "") {
+	          // Prevent default anchor click behavior
+	          event.preventDefault();
+
+	          // Store hash
+	          var hash = this.hash;
+
+	          // Using jQuery's animate() method to add smooth page scroll
+	          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+	          $('html, body').animate({
+	            scrollTop: $(hash).offset().top
+	          }, 1000, function(){
+
+	            // Add hash (#) to URL when done scrolling (default click behavior)
+	            window.location.hash = hash;
+	          });
+	        }  // End if
+	      });
+	    }
+	}
+
+
 	var counterWayPoint = function() {
 		if ($('#style-counter').length > 0 ) {
 			$('#style-counter').waypoint( function( direction ) {
@@ -98,6 +129,67 @@
 	    $(".project-menu > .filter").removeClass("active");
 	    $(this).addClass("active");
 	});
+
+
+
+	//Contact Form Validation
+	function contactFormValidation () {
+	  var activeForm = $('.form-validation');
+	  if(activeForm.length){
+	    activeForm.validate({ // initialize the plugin
+	      rules: {
+	        Fname: {
+	          required: true
+	        },
+	        Lname: {
+	          required: true
+	        },
+	        email: {
+	          required: true,
+	          email: true
+	        },
+	        sub: {
+	          required: true
+	        },
+	        message: {
+	          required: true
+	        }
+	      },
+	      submitHandler: function(form) {
+	                $(form).ajaxSubmit({
+	                    success: function() {
+	                        $('.form-validation :input').attr('disabled', 'disabled');
+	                        activeForm.fadeTo( "slow", 1, function() {
+	                            $(this).find(':input').attr('disabled', 'disabled');
+	                            $(this).find('label').css('cursor','default');
+	                            $('#alert-success').fadeIn();
+	                        });
+	                    },
+	                    error: function() {
+	                        activeForm.fadeTo( "slow", 1, function() {
+	                            $('#alert-error').fadeIn();
+	                        });
+	                    }
+	                });
+	            }
+	        });
+	  }
+	}
+
+
+	// Close suddess Alret
+	function closeSuccessAlert () {
+	  var closeButton = $ (".closeAlert");
+	  if(closeButton.length) {
+	      closeButton.on('click', function(){
+	        $(".alert-wrapper").fadeOut();
+	      });
+	      closeButton.on('click', function(){
+	        $(".alert-wrapper").fadeOut();
+	      })
+	  }
+	}
+
 
 	// Animations
 	var contentWayPoint = function() {
@@ -186,14 +278,14 @@
 
 	var clickMenu = function() {
 
-		$('#navbar a:not([class="external"])').click(function(event){
+		$('#navbar-collapse-1 a:not([class="external"])').click(function(event){
 			var section = $(this).data('nav-section'),
-				navbar = $('#navbar');
+				navbar = $('#navbar-collapse-1');
 
 				if ( $('[data-section="' + section + '"]').length ) {
 			    	$('html, body').animate({
-			        	scrollTop: $('[data-section="' + section + '"]').offset().top - 55
-			    	}, 500);
+			        	scrollTop: $('[data-section="' + section + '"]').offset().top - 70
+			    	}, 600);
 			   }
 
 		    if ( navbar.is(':visible')) {
@@ -212,7 +304,7 @@
 	// Reflect scrolling in navigation
 	var navActive = function(section) {
 
-		var $el = $('#navbar > ul');
+		var $el = $('#navbar-collapse-1 > ul');
 		$el.find('li').removeClass('active');
 		$el.each(function(){
 			$(this).find('a[data-nav-section="'+section+'"]').closest('li').addClass('active');
@@ -245,7 +337,18 @@
 
 
 
+	window.onscroll = function() {myFixedNav()};
 
+	var header = document.getElementById("myHeader");
+	var sticky = header.offsetTop;
+
+	function myFixedNav() {
+	  if (window.pageYOffset >= sticky) {
+	    header.classList.add("sticky");
+	  } else {
+	    header.classList.remove("sticky");
+	  }
+	}
 
 
 	var sliderMain = function() {
@@ -340,6 +443,10 @@
 		navigationSection();
 		// windowScroll();
 		mixitupGallery ();
+		closeSuccessAlert ();
+		contactFormValidation ();
+		myFixedNav();
+		onePageFixedNav();
 
 
 		mobileMenuOutsideClick();
